@@ -3,10 +3,10 @@ package bot.commands;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 import bot.Command;
 
-public class HelpCommand implements Command
+public class MuteChatCommand implements Command
 {
-	private final String HELP_ = "USAGE: ~!help";
-	
+	private final String HELP_ = "USAGE: ~!togglemute";
+	public static boolean isMuted = false;
 
 	@Override
 	public boolean called(String[] args, MessageReceivedEvent event) 
@@ -17,15 +17,10 @@ public class HelpCommand implements Command
 	@Override
 	public void action(String[] args, MessageReceivedEvent event) 
 	{
+		isMuted = !isMuted;
 		event.getMessage().deleteMessage();
-		event.getAuthor().getPrivateChannel().sendMessage(
-				"```===================== HELP ======================\n\n"
-			+	"~!help : The Help Command\n\n" 
-			+	"~!rules : Displays link to Rules & Terms\n\n"
-			+	"~!staff : Displays link to staff member list\n\n"
-			+	"~!btapply : Displays link to Build Team application information\n\n"
-			+   "~!togglemute : enables/disables text channel mute```");
 		
+		event.getTextChannel().sendMessage("```CHAT MUTE: " + ((isMuted) ? "ENABLED```" : "DISABLED```") );
 	}
 
 	@Override

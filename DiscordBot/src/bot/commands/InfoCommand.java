@@ -3,9 +3,9 @@ package bot.commands;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 import bot.Command;
 
-public class HelpCommand implements Command
+public class InfoCommand implements Command
 {
-	private final String HELP_ = "USAGE: ~!help";
+	private final String HELP_ = "USAGE: ~!info";
 	
 
 	@Override
@@ -18,14 +18,7 @@ public class HelpCommand implements Command
 	public void action(String[] args, MessageReceivedEvent event) 
 	{
 		event.getMessage().deleteMessage();
-		event.getAuthor().getPrivateChannel().sendMessage(
-				"```===================== HELP ======================\n\n"
-			+	"~!help : The Help Command\n\n" 
-			+	"~!rules : Displays link to Rules & Terms\n\n"
-			+	"~!staff : Displays link to staff member list\n\n"
-			+	"~!btapply : Displays link to Build Team application information\n\n"
-			+   "~!togglemute : enables/disables text channel mute```");
-		
+		event.getAuthor().getPrivateChannel().sendMessage("```#INFORMATION:\n\nDeveloper: RealNickonator\n\nBuild: 1.0.3\n\nSource: https://github.com/RealNickonator/Minetime-Bot\n\nContact: nick@dreamitive.org\n\nPS: Styles is God ```");
 	}
 
 	@Override

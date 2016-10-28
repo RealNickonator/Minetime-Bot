@@ -10,10 +10,17 @@ import java.util.HashMap;
 
 import net.dv8tion.jda.JDA;
 import net.dv8tion.jda.JDABuilder;
+import bot.commands.AIQuestionCommand;
+import bot.commands.AITalkCommand;
+import bot.commands.BleachCommand;
 import bot.commands.BuildTeamCommand;
 import bot.commands.HelpCommand;
+import bot.commands.InfoCommand;
+import bot.commands.MojangCommand;
+import bot.commands.MuteChatCommand;
 import bot.commands.RulesCommand;
 import bot.commands.StaffCommand;
+import bot.commands.StylesCommand;
 import bot.utils.ChatListener;
 import bot.utils.CommandParser;
 
@@ -53,6 +60,13 @@ public class Main
 		commands.put("btapply", new BuildTeamCommand());
 		commands.put("staff", new StaffCommand());
 		commands.put("help", new HelpCommand());
+		commands.put("togglemute", new MuteChatCommand());
+		commands.put("api", new MojangCommand());
+		commands.put("bleach", new BleachCommand());
+		commands.put("talk", new AITalkCommand());
+		commands.put("q", new AIQuestionCommand());
+		commands.put("styles", new StylesCommand());
+		commands.put("info", new InfoCommand());
 	}
 	
 	public static void handleCommand(CommandParser.CommandContainer cmd)
