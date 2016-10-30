@@ -19,12 +19,20 @@ public class HelpCommand implements Command
 	{
 		event.getMessage().deleteMessage();
 		event.getAuthor().getPrivateChannel().sendMessage(
-				"```===================== HELP ======================\n\n"
-			+	"~!help : The Help Command\n\n" 
-			+	"~!rules : Displays link to Rules & Terms\n\n"
-			+	"~!staff : Displays link to staff member list\n\n"
-			+	"~!btapply : Displays link to Build Team application information\n\n"
-			+   "~!togglemute : enables/disables text channel mute```");
+				"```Markdown\n#Minetime Bot Commands\n\n"
+			+	"[~!help](The Help Command)\n\n" 
+			+	"[~!info](Displays bot information)\n\n"
+			+	"[~!rules](Displays link to Rules & Terms)\n\n"
+			+	"[~!staff](Displays link to staff member list)\n\n"
+			+	"[~!btapply](Displays link to Build Team application information)\n\n"
+			+   "[~!togglemute](Enables/Disables text channel mute)\n\n"
+			+	"[~!api <mc username>](Displays previous usernames and UUID of the requested user)\n\n"
+			+	"[~!getchat <Discord ID#>](Displays recent chat logs from the requested user)\n\n"
+			+	"[~!q <question>](Asks the AI a question)\n\n"
+			+	"[~!talk](Makes the AI generate a sentence)\n\n"
+			+	"[~!bleach](Displays GIF of filling a glass with bleach)\n\n"
+			+	"[~!styles](ATTENTION: Styles is a God)\n\n"
+			+	"```");
 		
 	}
 

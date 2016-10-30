@@ -18,7 +18,8 @@ public class InfoCommand implements Command
 	public void action(String[] args, MessageReceivedEvent event) 
 	{
 		event.getMessage().deleteMessage();
-		event.getAuthor().getPrivateChannel().sendMessage("```#INFORMATION:\n\nDeveloper: RealNickonator\n\nBuild: 1.0.3\n\nSource: https://github.com/RealNickonator/Minetime-Bot\n\nContact: nick@dreamitive.org\n\nPS: Styles is God ```");
+		event.getAuthor().getPrivateChannel().sendMessage("```Markdown\n#INFORMATION:\n\n[Developer](RealNickonator)\n\n[Build](1.0.7)\n\n[Source](https://github.com/RealNickonator/Minetime-Bot)\n\n[Contact](nick@dreamitive.org)\n\nPS: Styles is God ```");
+		event.getAuthor().getPrivateChannel().sendMessage("Source: https://github.com/RealNickonator/Minetime-Bot");
 	}
 
 	@Override

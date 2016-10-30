@@ -10,10 +10,13 @@ import java.util.HashMap;
 
 import net.dv8tion.jda.JDA;
 import net.dv8tion.jda.JDABuilder;
+
+import org.json.JSONObject;
+
 import bot.commands.AIQuestionCommand;
 import bot.commands.AITalkCommand;
-import bot.commands.BleachCommand;
 import bot.commands.BuildTeamCommand;
+import bot.commands.GetChatCommand;
 import bot.commands.HelpCommand;
 import bot.commands.InfoCommand;
 import bot.commands.MojangCommand;
@@ -29,22 +32,22 @@ public class Main
 {
 	private static JDA jda;
 	public static final CommandParser parser = new CommandParser();
-	
 	public static HashMap<String, Command> commands = new HashMap<String, Command>();
-	
 	public static ArrayList<String> banned_chat = new ArrayList<String>();
+	public static JSONObject chatJson;
 	
 	public static void main(String[] args) throws FileNotFoundException, IOException
 	{
 		try
 		{
 			jda = new JDABuilder().addListener(new BotListener()).addListener(new ChatListener()).setBotToken("MjQxMTIzOTg2OTQ2MjYwOTky.CvNU1Q.esREKkWdkgTsFd_IuwMIO2Vv8qQ").buildBlocking();
+			jda.getAccountManager().setGame("~!help for commands");
+			jda.getAccountManager().setUsername("Minetime Bot");
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();
 		}
-		
 		
 		try (BufferedReader br = new BufferedReader(new FileReader(new File("C:\\Users\\nick6_000\\Desktop\\Minetime Client\\jars\\BlackCat\\autostaff2.txt")))) 
 		{
@@ -55,18 +58,17 @@ public class Main
 		    }
 		}
 		
-		
 		commands.put("rules", new RulesCommand());
 		commands.put("btapply", new BuildTeamCommand());
 		commands.put("staff", new StaffCommand());
 		commands.put("help", new HelpCommand());
 		commands.put("togglemute", new MuteChatCommand());
 		commands.put("api", new MojangCommand());
-		commands.put("bleach", new BleachCommand());
 		commands.put("talk", new AITalkCommand());
 		commands.put("q", new AIQuestionCommand());
 		commands.put("styles", new StylesCommand());
 		commands.put("info", new InfoCommand());
+		commands.put("getchat", new GetChatCommand());
 	}
 	
 	public static void handleCommand(CommandParser.CommandContainer cmd)
@@ -86,6 +88,4 @@ public class Main
 			}
 		}
 	}
-	
-	
 }

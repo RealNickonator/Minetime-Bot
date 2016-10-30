@@ -4,5 +4,7 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="lib" path="C:/Users/nick6_000/Downloads/JDA-2.0.0_242.jar"/>
 	<classpathentry kind="lib" path="C:/Users/nick6_000/Downloads/JDA-withDependencies-2.0.0_242.jar"/>
+	<classpathentry kind="lib" path="C:/Users/nick6_000/Downloads/jsoup-1.8.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/nick6_000/Downloads/java-json.jar.zip"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
